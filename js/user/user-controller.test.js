@@ -68,3 +68,10 @@ test('findByEmail retorna undefined cuando el email no existe', function() {
     expect(found).toBeUndefined();
   });
 
+//Tarea 2.4 Find by ID cuando existe
+test('findById() - should return user if id exists', () => {
+    let user = new User(42, 'Carlos', 'carlos@example.com');
+    userController.add(user);
+    let found = userController.findById(42);
+    expect(found).toBe(user);
+  });
